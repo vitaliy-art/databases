@@ -9,6 +9,6 @@ public class Person
 
     public override string ToString()
     {
-        return $"Person {{ Id: {Id}, Name: {Name}, Address: {Address}, BirthDate: {BirthDate} }}";
+        return $"Person {{ Id: {Id}, Name: {Name}, Address: {Address}, BirthDate: {BirthDate.ToString("dd.MM.yyyy")} }}";
     }
 }

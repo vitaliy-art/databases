@@ -42,21 +42,13 @@ public class EntityService
         return await AddNewEntityAsync(new Person{ Name = name, Address = address, BirthDate = birthDate });
     }
 
-    public async Task<Employee> AddNewEmployeeAsync(Person person, Department department, Position position)
-    {
-        if (person is null || department is null)
-            throw new ArgumentNullException("person and department cannot be null");
-
-        return await AddNewEntityAsync(new Employee{ Person = person, Department = department, Position = position });
-    }
-
     public async Task<Employee> AddNewEmployeeAsync(Guid personId, int departmentId, Position position)
     {
         using (var c = _contextFactory.GetContext())
         {
-            var person = (await c.People!.FindAsync(personId)) ?? throw new KeyNotFoundException($"person with id {personId} not found");
-            var department = (await c.Departments!.FindAsync(departmentId)) ?? throw new KeyNotFoundException($"department with id {departmentId} not found");
-            var employee = new Employee{ Person = person, Department = department, Position = position };
+            var person = (await GetPersonAsync(personId)) ?? throw new KeyNotFoundException($"person with id {personId} not found");
+            var department = (await GetDepartmentAsync(departmentId)) ?? throw new KeyNotFoundException($"department with id {departmentId} not found");
+            var employee = new Employee{ PersonId = personId, DepartmentId = departmentId, Position = position };
             await c.Employees!.AddAsync(employee);
             await c.SaveChangesAsync();
             return employee;
@@ -68,10 +60,7 @@ public class EntityService
         var person = await AddNewPersonAsync(name, address, birthDate);
 
         using (var c = _contextFactory.GetContext())
-        {
-            var department = (await c.Departments!.FindAsync(departmentId)) ?? throw new KeyNotFoundException($"department with id {departmentId} not found");
-            return await AddNewEmployeeAsync(person, department, position);
-        }
+            return await AddNewEmployeeAsync(person.Id, departmentId, position);
     }
 
     public async Task UpdateEntityAsync<TEntity>(TEntity entity) where TEntity : class
