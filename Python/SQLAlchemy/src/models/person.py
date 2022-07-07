@@ -1,10 +1,10 @@
 import uuid
 
-from .base import Base
-
 from sqlalchemy import Column, String
 from sqlalchemy.dialects.sqlite import DATE
 from sqlalchemy.orm import relationship
+
+from .base import Base
 
 
 class Person(Base):

@@ -1,12 +1,12 @@
 import uuid
 
+from sqlalchemy import Column, Enum, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
+
 from .base import Base
 from .department import Department
 from .enums.position import Position
 from .person import Person
-
-from sqlalchemy import Column, Enum, ForeignKey, Integer, String
-from sqlalchemy.orm import relationship
 
 
 class Employee(Base):
