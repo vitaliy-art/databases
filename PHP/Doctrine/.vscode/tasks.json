@@ -2,12 +2,23 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "install",
+            "label": "update",
             "command": "composer",
             "type": "process",
             "args": [
-                "install"
+                "update"
             ]
+        },
+        {
+            "label": "dbupdate",
+            "command": "vendor/bin/doctrine",
+            "type": "process",
+            "args": [
+                "orm:schema-tool:update",
+                "--force",
+                "--dump-sql"
+            ],
+            "dependsOn": "update"
         }
     ]
 }
