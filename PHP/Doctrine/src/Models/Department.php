@@ -30,6 +30,6 @@ class Department implements Stringable
 
     public function __toString(): string
     {
-        return "Department { Id: " . $this->id . ", Name: " . $this->name . " }";;
+        return "Department { Id: $this->id, Name: $this->name }";
     }
 }

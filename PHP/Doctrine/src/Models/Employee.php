@@ -45,6 +45,6 @@ class Employee // implements Stringable
 
     public function __toString(): string
     {
-        return "Employee { Id: " . $this->id . ", Person: " . $this->person . ", Department: " . $this->department . ", Position: " . $this->position->name . " }";
+        return "Employee { Id: $this->id, Person: $this->person, Department: $this->department, Position: $this->position->name }";
     }
 }

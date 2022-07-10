@@ -42,6 +42,6 @@ class Person implements Stringable
 
     public function __toString(): string
     {
-        return "Person { Id: " . $this->id . ", Name: " . $this->name . ", Address: " . $this->address . ", BirthDate " . $this->birth_date . " }";
+        return "Person { Id: $this->id, Name: $this->name, Address: $this->address, BirthDate $this->birth_date }";
     }
 }
