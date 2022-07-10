@@ -4,6 +4,7 @@ namespace Models;
 
 use Doctrine\ORM\Mapping as ORM;
 use Stringable;
+use Traits\EntityName;
 
 /**
  * @ORM\Entity
@@ -11,6 +12,8 @@ use Stringable;
  */
 class Person implements Stringable
 {
+    use EntityName;
+
     /**
      * @ORM\Id
      * @ORM\Column(type="guid")
