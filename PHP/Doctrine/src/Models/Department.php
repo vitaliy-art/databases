@@ -4,7 +4,6 @@ namespace Models;
 
 use Doctrine\ORM\Mapping as ORM;
 use Stringable;
-use Traits\EntityName;
 
 /**
  * @ORM\Entity
@@ -12,8 +11,6 @@ use Traits\EntityName;
  */
 class Department implements Stringable
 {
-    use EntityName;
-
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -34,5 +31,10 @@ class Department implements Stringable
     public function __toString(): string
     {
         return "Department { Id: $this->id, Name: $this->name }";
+    }
+
+    public function set_name(string $name)
+    {
+        $this->name = $name;
     }
 }

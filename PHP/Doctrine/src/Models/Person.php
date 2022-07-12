@@ -2,9 +2,9 @@
 
 namespace Models;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Stringable;
-use Traits\EntityName;
 
 /**
  * @ORM\Entity
@@ -12,12 +12,11 @@ use Traits\EntityName;
  */
 class Person implements Stringable
 {
-    use EntityName;
-
     /**
      * @ORM\Id
      * @ORM\Column(type="guid")
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Helpers\UuidGenerator")
      */
     private $id;
 
@@ -36,7 +35,7 @@ class Person implements Stringable
      */
     private $birth_date;
 
-    public function __construct(string $name, string $address, string $birth_date)
+    public function __construct(string $name, string $address, DateTime $birth_date)
     {
         $this->name = $name;
         $this->address = $address;
@@ -45,6 +44,22 @@ class Person implements Stringable
 
     public function __toString(): string
     {
-        return "Person { Id: $this->id, Name: $this->name, Address: $this->address, BirthDate $this->birth_date }";
+        $birth = $this->birth_date->format('d-m-Y');
+        return "Person { Id: $this->id, Name: $this->name, Address: $this->address, BirthDate: $birth }";
+    }
+
+    public function set_name(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function set_address(string $address)
+    {
+        $this->address = $address;
+    }
+
+    public function set_birth_date(DateTime $birth_date)
+    {
+        $this->birth_date = $birth_date;
     }
 }
