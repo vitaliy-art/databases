@@ -23,3 +23,7 @@ $conn = array(
 );
 
 $entityManager = EntityManager::create($conn, $config);
+
+$sql = "PRAGMA foreign_keys = ON;";
+$connection = $entityManager->getConnection();
+$connection->exec($sql);
