@@ -2,13 +2,10 @@
 Database CRUD realizations for different languages
 
 ## C#
-[EntityFramework](./C#/EntityFramework)
+[EntityFramework](https://github.com/vitaliy-art/databases/tree/main/C%23/EntityFramework)
 
 ## Go
-[GORM](./Go/GORM)
+[GORM](https://github.com/vitaliy-art/databases/tree/main/Go/GORM)
 
 ## Python
-[SQLAlchemy](./Python/SQLAlchemy)
-
-## PHP
-[Doctrine](./PHP/Doctrine)
+[SQLAlchemy](https://github.com/vitaliy-art/databases/tree/main/Python/SQLAlchemy)
