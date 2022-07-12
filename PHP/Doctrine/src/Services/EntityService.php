@@ -2,6 +2,7 @@
 
 namespace Services;
 
+use DateTime;
 use Doctrine\ORM\EntityManager;
 use Models\Department;
 use Models\Person;
@@ -24,7 +25,7 @@ class EntityService
 
     public function get_department(int $id): Department
     {
-        $entity_name = Department::get_entity_name();
+        $entity_name = Department::class;
 
         /** @var Department */
         $dep = $this->get_entity($id, $entity_name);
@@ -33,7 +34,7 @@ class EntityService
 
     public function get_person(string $id): Person
     {
-        $entity_name = Person::get_entity_name();
+        $entity_name = Person::class;
 
         /** @var Person */
         $per = $this->get_entity($id, $entity_name);
@@ -42,7 +43,7 @@ class EntityService
 
     public function get_employee(string $id): Employee
     {
-        $entity_name = Employee::get_entity_name();
+        $entity_name = Employee::class;
 
         /** @var Employee */
         $emp = $this->get_entity($id, $entity_name);
@@ -62,7 +63,7 @@ class EntityService
         return $dep;
     }
 
-    public function add_new_person(string $name, string $address, string $birth_date): Person
+    public function add_new_person(string $name, string $address, DateTime $birth_date): Person
     {
         $per = new Person($name, $address, $birth_date);
         $this->add_new($per);
@@ -76,7 +77,7 @@ class EntityService
         return $emp;
     }
 
-    public function add_new_employee_and_person(Department $dep, string $name, string $address, string $birth_date, Position $pos): Employee
+    public function add_new_employee_and_person(Department $dep, string $name, string $address, DateTime $birth_date, Position $pos): Employee
     {
         $per = $this->add_new_person($name, $address, $birth_date);
         return $this->add_new_employee($per, $dep, $pos);
@@ -103,7 +104,7 @@ class EntityService
      */
     public function get_all_departments(): array
     {
-        return $this->get_all(Department::get_entity_name());
+        return $this->get_all(Department::class);
     }
 
     /**
@@ -111,7 +112,7 @@ class EntityService
      */
     public function get_all_persons(): array
     {
-        return $this->get_all(Person::get_entity_name());
+        return $this->get_all(Person::class);
     }
 
     /**
@@ -119,7 +120,7 @@ class EntityService
      */
     public function get_all_employee(): array
     {
-        return $this->get_all(Employee::get_entity_name());
+        return $this->get_all(Employee::class);
     }
 
     public function remove(mixed $entity)
@@ -133,11 +134,9 @@ class EntityService
         if ($entities && count($entities) == 0)
             return;
 
-        $this->entityManager->beginTransaction();
-
         foreach ($entities as $entity)
             $this->entityManager->remove($entity);
 
-        $this->entityManager->commit();
+        $this->entityManager->flush($entities);
     }
 }
