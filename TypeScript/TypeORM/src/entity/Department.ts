@@ -11,7 +11,7 @@ export class Department {
     name: string;
 
     @OneToMany(() => Employee, (employee) => employee.department)
-    employees: Employee[]
+    employees: Employee[];
 
     toString = (): string => {
         return `Department { Id: ${this.id}, Name: ${this.name} }`;

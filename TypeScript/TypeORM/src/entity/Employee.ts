@@ -10,13 +10,13 @@ export class Employee {
     id: string;
 
     @ManyToOne(() => Department, (department) => department.employees)
-    department: Department
+    department: Department;
 
     @ManyToOne(() => Person, (person) => person.employees)
-    person: Person
+    person: Person;
 
     @Column("enum")
-    position: Position
+    position: Position;
 
     toString = (): string => {
         return `Employee { Id: ${this.id}, Person: ${this.person}, Department: ${this.department}, Position: ${this.position} }`;
