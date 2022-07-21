@@ -13,7 +13,11 @@ export class Department {
     @OneToMany(() => Employee, (employee) => employee.department)
     employees: Employee[];
 
-    toString = (): string => {
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    string() {
         return `Department { Id: ${this.id}, Name: ${this.name} }`;
     }
 

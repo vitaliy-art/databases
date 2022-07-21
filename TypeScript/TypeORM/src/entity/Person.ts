@@ -19,7 +19,13 @@ export class Person {
     @OneToMany(() => Employee, (employee) => employee.person)
     employees: Employee[];
 
-    toString = (): string => {
+    constructor(name: string, address: string, birthDate: Date) {
+        this.name = name;
+        this.address = address;
+        this.birthDate = birthDate.toDateString();
+    }
+
+    string(): string {
         return `Person { Id: ${this.id}, Name: ${this.name}, Address: ${this.address}, BirthDate: ${this.birthDate} }`;
     }
 

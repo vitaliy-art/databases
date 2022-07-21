@@ -15,11 +15,19 @@ export class Employee {
     @ManyToOne(() => Person, (person) => person.employees)
     person: Person;
 
-    @Column("enum")
-    position: Position;
+    @Column({
+        enum: Position,
+    })
+    position: number;
 
-    toString = (): string => {
-        return `Employee { Id: ${this.id}, Person: ${this.person}, Department: ${this.department}, Position: ${this.position} }`;
+    constructor(department: Department, person: Person, position: Position) {
+        this.department = department;
+        this.person = person;
+        this.position = position;
+    }
+
+    string(): string {
+        return `Employee { Id: ${this.id}, Person: ${this.person.string()}, Department: ${this.department.string()}, Position: ${this.position as Position} }`;
     }
 
 }
