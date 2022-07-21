@@ -5,3 +5,8 @@ Steps to run this project:
 1. Run `npm i` command
 2. Setup database settings inside `data-source.ts` file
 3. Run `npm start` command
+
+## How to generate migrations
+```bash
+npx typeorm-ts-node-esm migration:generate path-to-generated-migration/migration-name -d path-to-data-source-file
+```
