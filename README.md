@@ -12,3 +12,6 @@ Database CRUD realizations for different languages
 
 ## PHP
 [Doctrine](https://github.com/vitaliy-art/databases/tree/main/PHP/Doctrine)
+
+## TypeScript
+[TypeORM](https://github.com/vitaliy-art/databases/tree/main/TypeScript/TypeORM)
