@@ -1,6 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { Employee } from "./Employee";
 
+interface IDepartment {
+    name: string;
+}
+
 @Entity()
 export class Department {
 
@@ -10,11 +14,11 @@ export class Department {
     @Column()
     name: string;
 
-    @OneToMany(() => Employee, (employee) => employee.department)
+    @OneToMany(() => Employee, (employee) => employee.department, { cascade: true })
     employees: Employee[];
 
-    constructor(name: string) {
-        this.name = name;
+    constructor(obj?: IDepartment) {
+        this.name = obj?.name ?? "";
     }
 
     string() {

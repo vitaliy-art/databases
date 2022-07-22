@@ -1,6 +1,12 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Employee } from "./Employee";
 
+interface IPerson {
+    name: string;
+    address: string;
+    birthDate: Date;
+}
+
 @Entity("people")
 export class Person {
 
@@ -16,17 +22,17 @@ export class Person {
     @Column("date")
     birthDate: string;
 
-    @OneToMany(() => Employee, (employee) => employee.person)
+    @OneToMany(() => Employee, (employee) => employee.person, { cascade: true })
     employees: Employee[];
 
-    constructor(name: string, address: string, birthDate: Date) {
-        this.name = name;
-        this.address = address;
-        this.birthDate = birthDate.toDateString();
+    constructor(obj?: IPerson) {
+        this.name = obj?.name;
+        this.address = obj?.address;
+        this.birthDate = obj?.birthDate.toDateString();
     }
 
     string(): string {
-        return `Person { Id: ${this.id}, Name: ${this.name}, Address: ${this.address}, BirthDate: ${this.birthDate} }`;
+        return `Person { Id: ${this.id}, Name: ${this.name}, Address: ${this.address}, BirthDate: ${new Date(this.birthDate).toISOString().split("T")[0]} }`;
     }
 
 }

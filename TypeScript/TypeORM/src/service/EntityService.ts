@@ -44,17 +44,17 @@ export class EntityService {
     }
 
     addNewDepartment(name: string): Promise<Department> {
-        let dep = new Department(name);
+        let dep = new Department({name: name});
         return this.save(dep);
     }
 
     addNewPerson(name: string, address: string, birthDate: Date): Promise<Person> {
-        let per = new Person(name, address, birthDate);
+        let per = new Person({name: name, address: address, birthDate: birthDate});
         return this.save(per);
     }
 
     addNewEmployee(person: Person, department: Department, position: Position): Promise<Employee> {
-        let emp = new Employee(department, person, position);
+        let emp = new Employee({department: department, person: person, position: position});
         return this.save(emp);
     }
 

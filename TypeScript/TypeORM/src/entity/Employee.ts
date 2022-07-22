@@ -1,7 +1,13 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Department } from "./Department";
 import { Person } from "./Person";
-import { Position } from "./Position";
+import { Position, positionString } from "./Position";
+
+interface IEmployee {
+    department: Department;
+    person: Person;
+    position: Position;
+}
 
 @Entity()
 export class Employee {
@@ -9,10 +15,10 @@ export class Employee {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @ManyToOne(() => Department, (department) => department.employees)
+    @ManyToOne(() => Department, (department) => department.employees, { onDelete: "CASCADE", onUpdate: "CASCADE" })
     department: Department;
 
-    @ManyToOne(() => Person, (person) => person.employees)
+    @ManyToOne(() => Person, (person) => person.employees, { onDelete: "CASCADE", onUpdate: "CASCADE" })
     person: Person;
 
     @Column({
@@ -20,14 +26,14 @@ export class Employee {
     })
     position: number;
 
-    constructor(department: Department, person: Person, position: Position) {
-        this.department = department;
-        this.person = person;
-        this.position = position;
+    constructor(obj?: IEmployee) {
+        this.department = obj?.department;
+        this.person = obj?.person;
+        this.position = obj?.position ?? Position.Staffer;
     }
 
     string(): string {
-        return `Employee { Id: ${this.id}, Person: ${this.person.string()}, Department: ${this.department.string()}, Position: ${this.position as Position} }`;
+        return `Employee { Id: ${this.id}, Person: ${this.person.string()}, Department: ${this.department.string()}, Position: ${positionString(this.position)} }`;
     }
 
 }
