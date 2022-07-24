@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Department } from "./Department";
 import { Person } from "./Person";
-import { Position, positionString } from "./Position";
+import { Position } from "./Position";
 
 interface IEmployee {
     department: Department;
@@ -33,7 +33,7 @@ export class Employee {
     }
 
     string(): string {
-        return `Employee { Id: ${this.id}, Person: ${this.person.string()}, Department: ${this.department.string()}, Position: ${positionString(this.position)} }`;
+        return `Employee { Id: ${this.id}, Person: ${this.person.string()}, Department: ${this.department.string()}, Position: ${Position[this.position]} }`;
     }
 
 }

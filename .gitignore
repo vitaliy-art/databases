@@ -3,3 +3,4 @@ Go/GORM/bd.db
 Python/SQLAlchemy/bd.db
 PHP/Doctrine/bd.db
 TypeScript/TypeORM/db.bd
+JavaScript/TypeORM/db.bd
