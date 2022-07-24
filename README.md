@@ -15,3 +15,6 @@ Database CRUD realizations for different languages
 
 ## TypeScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/TypeScript/TypeORM)
+
+## JavaScript
+[TypeORM](https://github.com/vitaliy-art/databases/tree/main/JavaScript/TypeORM)
