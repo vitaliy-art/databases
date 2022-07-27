@@ -4,7 +4,7 @@
   "description": "TypeORM project with CoffeeScript.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx coffee -c -m ./src/main.coffee"
+    "build": "npx coffee -c -m ./src"
   },
   "author": "Vitaliy Artemov",
   "license": "Unlicense",
