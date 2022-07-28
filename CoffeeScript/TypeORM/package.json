@@ -1,0 +1,21 @@
+{
+  "name": "typeorm",
+  "version": "1.0.0",
+  "description": "TypeORM project with CoffeeScript.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx coffee -c -m ./src"
+  },
+  "author": "Vitaliy Artemov",
+  "license": "Unlicense",
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  },
+  "main": "src/main.js",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.10",
+    "typeorm": "^0.3.7"
+  },
+  "type": "module"
+}

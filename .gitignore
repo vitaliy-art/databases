@@ -4,3 +4,4 @@ Python/SQLAlchemy/bd.db
 PHP/Doctrine/bd.db
 TypeScript/TypeORM/db.bd
 JavaScript/TypeORM/db.bd
+CoffeeScript/TypeORM/bd.db
