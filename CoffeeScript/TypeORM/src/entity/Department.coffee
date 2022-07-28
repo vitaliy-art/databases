@@ -1,7 +1,5 @@
 import { EntitySchema } from "typeorm"
 
-export DepartmentSchema = new EntitySchema Department.schema
-
 export class Department
   @schemaName: "Department"
   @tableName: "departments"
@@ -22,3 +20,5 @@ export class Department
         generated: "increment"
       name:
         type: "varchar"
+
+export DepartmentSchema = new EntitySchema Department.schema

@@ -3,8 +3,6 @@ import { Position } from "./Position.js"
 import { Department } from "./Department.js"
 import { Person } from "./Person.js"
 
-export EmployeeSchema = new EntitySchema Employee.schema
-
 export class Employee
   @schemaName: "Employee"
   @tableName: "employees"
@@ -39,3 +37,5 @@ export class Employee
         eager: yes
         onDelete: "CASCADE"
         onUpdate: "CASCADE"
+
+export EmployeeSchema = new EntitySchema Employee.schema
