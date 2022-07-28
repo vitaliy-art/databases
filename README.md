@@ -18,3 +18,6 @@ Database CRUD realizations for different languages
 
 ## JavaScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/JavaScript/TypeORM)
+
+## CoffeeScript
+[TypeORM](https://github.com/vitaliy-art/databases/tree/main/CoffeeScript/TypeORM)
