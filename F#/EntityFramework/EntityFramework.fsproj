@@ -9,6 +9,10 @@
     <Compile Include="Models/Department.fs" />
     <Compile Include="Models/Person.fs" />
     <Compile Include="Models/Employee.fs" />
+    <Compile Include="Context/ApplicationContext.fs" />
+    <Compile Include="Context/ApplicationContextFactory.fs" />
+    <Compile Include="Migrations/*.fs" />
+    <Compile Include="Services/EntityService.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
