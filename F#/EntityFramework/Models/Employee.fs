@@ -1,7 +1,6 @@
 namespace Models
 
 open System
-open System.ComponentModel.DataAnnotations
 
 type Position =
   | Boss = 0
@@ -9,7 +8,7 @@ type Position =
   | Staffer = 2
 
 type Employee () =
-  [<Key>]
+  // [<Key>]
   member val Id: Guid = Guid.Empty with get, set
 
   member val PersonId: Guid = Guid.Empty with get, set
@@ -20,5 +19,12 @@ type Employee () =
 
   member val Position: Position = Position () with get, set
 
+  new (person, department, position) as this =
+    Employee ()
+    then
+      this.Person <- person
+      this.Department <- department
+      this.Position <- position
+
   with override this.ToString () =
-        $"Employee: {{ Id: {this.Id}, Person: {this.Person}, Department: {this.Department}, Pisition: {this.Position} }}"
+        $"Employee {{ Id: {this.Id}, Person: {this.Person}, Department: {this.Department}, Pisition: {this.Position} }}"
