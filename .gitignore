@@ -5,3 +5,4 @@ PHP/Doctrine/bd.db
 TypeScript/TypeORM/db.bd
 JavaScript/TypeORM/db.bd
 CoffeeScript/TypeORM/bd.db
+F#/EntityFramework/db.bd
