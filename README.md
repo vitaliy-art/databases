@@ -21,3 +21,6 @@ Database CRUD realizations for different languages
 
 ## CoffeeScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/CoffeeScript/TypeORM)
+
+## F#
+[EntityFramework](https://github.com/vitaliy-art/databases/tree/main/F%23/EntityFramework)
