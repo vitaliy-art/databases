@@ -9,7 +9,7 @@ description = {
 }
 dependencies = {
    "lua ~> 5.4",
-   "luasql-sqlite3 >=2.6"
+   "luasql-sqlite3 >= 2.6",
 }
 build = {
    type = "builtin",
