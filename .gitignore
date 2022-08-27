@@ -28,6 +28,8 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
+.fake
+
 C#/EntityFramework/db.bd
 Go/GORM/bd.db
 Python/SQLAlchemy/bd.db
@@ -36,5 +38,4 @@ TypeScript/TypeORM/db.bd
 JavaScript/TypeORM/db.bd
 CoffeeScript/TypeORM/bd.db
 F#/EntityFramework/db.bd
-
-.fake
+Lua/4DaysORM/bd.db
