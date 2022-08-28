@@ -25,5 +25,6 @@ RUN ./configure --with-lua-include=/usr/local/include
 RUN make
 RUN make install
 
+# Clone 4DaysORM repository
 WORKDIR /lib
 RUN git clone https://github.com/itdxer/4DaysORM.git
