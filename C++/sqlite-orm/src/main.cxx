@@ -3,5 +3,5 @@
 int main(int argc, char const *argv[])
 {
     /* code */
-    fmt::print("Hello!");
+    fmt::print("Hello World!\n");
 }
