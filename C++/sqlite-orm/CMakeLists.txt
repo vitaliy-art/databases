@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
 project(SqliteOrmTest CXX)
+include_directories(src)
 
 find_package(fmt REQUIRED)
 find_package(SqliteOrm REQUIRED)
