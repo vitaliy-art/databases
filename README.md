@@ -27,3 +27,6 @@ Database CRUD realizations for different languages
 
 ## Lua
 [4DaysORM](https://github.com/vitaliy-art/databases/tree/main/Lua/4DaysORM)
+
+## C++
+[SQLite ORM](https://github.com/vitaliy-art/databases/tree/main/C%2B%2B/sqlite-orm)
