@@ -11,7 +11,7 @@ public:
     string name;
 
     Department() {}
-    Department(string name) : name(name) {}
+    Department(string name) : id(-1), name(name) {}
 };
 
 template <>
