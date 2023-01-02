@@ -23,7 +23,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "ctime": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "any": "cpp"
     },
     "cmake.configureOnOpen": false
 }
