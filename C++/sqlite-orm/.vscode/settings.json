@@ -1,0 +1,30 @@
+{
+    "cSpell.words": [
+        "buildsystems",
+        "cpptools",
+        "DCMAKE",
+        "riussi",
+        "twxs",
+        "vcpkg",
+        "Waka",
+        "wakatime"
+    ],
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "/usr/local/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    },
+    "files.associations": {
+        "*.sql": "sql",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp",
+        "ctime": "cpp",
+        "chrono": "cpp",
+        "any": "cpp"
+    },
+    "cmake.configureOnOpen": false
+}
