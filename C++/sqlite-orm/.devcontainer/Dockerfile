@@ -19,3 +19,4 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
 
 RUN vcpkg install fmt
 RUN vcpkg install sqlite-orm
+RUN vcpkg install boost-uuid
