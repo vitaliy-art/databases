@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include <fmt/format.h>
+#include <boost/lexical_cast.hpp>
+#include <boost/uuid/random_generator.hpp>
+#include <boost/uuid/uuid_io.hpp>
 
 using std::string;
 
@@ -32,7 +35,11 @@ public:
     int position;
 
     Employee() {}
-    Employee(string personId, int departmentId, Position position) : personId(personId), departmentId(departmentId), position(position) {}
+
+    Employee(string personId, int departmentId, Position position) : personId(personId), departmentId(departmentId), position(position) {
+        boost::uuids::random_generator gen;
+        this->id = boost::lexical_cast<string>(gen());
+    }
 };
 
 template <>
