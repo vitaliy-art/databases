@@ -30,3 +30,6 @@ Database CRUD implementations for different languages
 
 ## C++
 [SQLite ORM](https://github.com/vitaliy-art/databases/tree/main/C%2B%2B/sqlite-orm)
+
+## Java
+[Hibernate](https://github.com/vitaliy-art/databases/tree/main/Java/Hybernate)
