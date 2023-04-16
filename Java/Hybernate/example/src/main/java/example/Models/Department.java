@@ -18,6 +18,12 @@ public class Department {
     @Column(nullable = false)
     private String name;
 
+    public Department() {}
+
+    public Department(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
@@ -32,5 +38,10 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Department { Id: %d, Name: %s }", id, name);
     }
 }

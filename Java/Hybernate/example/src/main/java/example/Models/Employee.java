@@ -22,14 +22,24 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name = "person_id")
+    // @Cascade(value = { CascadeType.ALL })
     private Person person;
 
     @OneToOne
     @JoinColumn(name = "department_id")
+    // @Cascade(value = { CascadeType.ALL })
     private Department department;
 
     @Enumerated(EnumType.ORDINAL)
     private Position position;
+
+    public Employee() {}
+
+    public Employee(Person person, Department department, Position position) {
+        this.person = person;
+        this.department = department;
+        this.position = position;
+    }
 
     public String getId() {
         return id;
@@ -61,5 +71,16 @@ public class Employee {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "Employee: { Id: %s, Person: %s, Department: %s, Position: %s }",
+            id,
+            person.toString(),
+            department.toString(),
+            position.toString()
+        );
     }
 }
