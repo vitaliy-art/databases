@@ -16,9 +16,13 @@ public class HibernateUtil {
     static {
         try {
             Properties prop = new Properties();
+            prop.setProperty("log4j.logger.org.hibernate.type", "warn");
+            prop.setProperty("log4j.logger.org.hibernate.orm.jdbc.bind", "warn");
+            prop.setProperty("log4j.logger.org.hibernate.orm.jdbc.extract", "warn");
             prop.setProperty("hibernate.dialect", "org.hibernate.community.dialect.SQLiteDialect");
             prop.setProperty("hibernate.connection.url", "jdbc:sqlite:bd.db");
             prop.setProperty("hibernate.connection.driver_class", "org.sqlite.JDBC");
+            prop.setProperty("hibernate.connection.foreign_keys", "true");
             Configuration config = new Configuration()
                 .setProperties(prop)
                 .addAnnotatedClass(Department.class)
