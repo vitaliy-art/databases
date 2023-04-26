@@ -37,5 +37,5 @@ Database CRUD implementations for different languages
 ## Kotlin
 [Hibernate](https://github.com/vitaliy-art/databases/tree/main/Kotlin/Hibernate)
 
-##Groovy
+## Groovy
 [Hibernate](https://github.com/vitaliy-art/databases/tree/main/Groovy/Hibernate)
