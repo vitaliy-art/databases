@@ -49,35 +49,29 @@ class EntityService {
     }
 
     <T> T getById(Class<T> entityClass, id) {
-        T result
-        switch (entityClass) {
-            case Department.class:
-                result = departmentEntityManager.getById(id)
-            case Person.class:
-                result = personEntityManager.getById(id)
-            case Employee.class:
-                result = employeeEntityManager.getById(id)
-            default:
-                throw new ClassCastException("${entityClass}")
+        if (entityClass == Department.class) {
+            return departmentEntityManager.getById(id)
         }
-
-        return result
+        else if (entityClass == Person.class) {
+            return personEntityManager.getById(id)
+        }
+        else if (entityClass == Employee.class) {
+            return employeeEntityManager.getById(id)
+        }
+        else throw new ClassCastException("${entityClass}")
     }
 
-    <T> T getAll(Class<T> entityClass) {
-        T result
-        switch (entityClass) {
-            case Department.class:
-                result = departmentEntityManager.getAll()
-            case Person.class:
-                result = personEntityManager.getAll()
-            case Employee.class:
-                result = employeeEntityManager.getAll()
-            default:
-                throw new ClassCastException("${entityClass}")
+    <T> List<T> getAll(Class<T> entityClass) {
+        if (entityClass == Department.class) {
+          return departmentEntityManager.getAll()
         }
-
-        return result
+        else if (entityClass == Person.class) {
+          return personEntityManager.getAll()
+        }
+        else if (entityClass == Employee.class) {
+          return employeeEntityManager.getAll()
+        }
+        else throw new ClassCastException("${entityClass}")
     }
 
     <T> T update(T entity) {

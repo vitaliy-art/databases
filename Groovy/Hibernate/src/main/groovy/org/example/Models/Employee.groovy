@@ -40,6 +40,6 @@ class Employee {
 
     @Override
     String toString() {
-        return "Employee: { Id: ${id}, Person: ${person}, Department: ${department}, Position: ${position} }"
+        return "{ Employee: { Id: ${id}, Person: ${person}, Department: ${department}, Position: ${position} } }"
     }
 }

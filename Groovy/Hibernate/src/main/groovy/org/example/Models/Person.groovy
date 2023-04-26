@@ -5,8 +5,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-
-import javax.persistence.Column
+import jakarta.persistence.Column
 
 @Entity
 @Table(name = "people")
@@ -29,16 +28,16 @@ class Person {
     Person(String name, String address, Date birthDate) {
         this.name = name
         this.address = address
-        calendar = new GregorianCalendar()
+        def calendar = new GregorianCalendar()
         calendar.setTime(birthDate)
-        year = calendar.get(Calendar.YEAR)
-        month = calendar.get(Calendar.MONTH) + 1
-        day = calendar.get(Calendar.DAY_OF_MONTH)
+        def year = calendar.get(Calendar.YEAR)
+        def month = calendar.get(Calendar.MONTH) + 1
+        def day = calendar.get(Calendar.DAY_OF_MONTH)
         this.birthDate = "${year}-${month}-${day}"
     }
 
     @Override
     String toString() {
-        return "Person: { Id: ${id}, Name: ${name}, Address: ${address}, BirthDate: ${birthDate} }"
+        return "{ Person: { Id: ${id}, Name: ${name}, Address: ${address}, BirthDate: ${birthDate} } }"
     }
 }

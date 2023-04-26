@@ -5,8 +5,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-
-import javax.persistence.Column
+import jakarta.persistence.Column
 
 @Entity
 @Table(name = "departments")
@@ -26,6 +25,6 @@ public class Department {
 
     @Override
     String toString() {
-        return "Department: { Id: ${id}, Name: ${name} }"
+        return "{ Department: { Id: ${id}, Name: ${name} } }"
     }
 }

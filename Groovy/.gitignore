@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/groovy
-# Edit at https://www.toptal.com/developers/gitignore?templates=groovy
+# Created by https://www.toptal.com/developers/gitignore/api/groovy,gradle
+# Edit at https://www.toptal.com/developers/gitignore?templates=groovy,gradle
 
 ### Groovy ###
 # .gitignore created from Groovy contributors in https://github.com/apache/groovy/blob/master/.gitignore
@@ -27,4 +27,29 @@ out/
 bin/
 
 
-# End of https://www.toptal.com/developers/gitignore/api/groovy
+### Gradle ###
+.gradle
+**/build/
+!src/**/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Avoid ignore Gradle wrappper properties
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+# Eclipse Gradle plugin generated files
+# Eclipse Core
+# JDT-specific (Eclipse Java Development Tools)
+
+### Gradle Patch ###
+# Java heap dump
+*.hprof
+
+# End of https://www.toptal.com/developers/gitignore/api/groovy,gradle
