@@ -147,4 +147,6 @@ CoffeeScript/TypeORM/bd.db
 F#/EntityFramework/db.bd
 Lua/4DaysORM/bd.db
 Java/Hybernate/bd.db
+Groovy/Hibernate/src/main/groovy/bd.db
 Kotlin/Hibernate/bd.db
+Groovy/Hibernate/bd.db
