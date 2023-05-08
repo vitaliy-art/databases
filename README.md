@@ -39,3 +39,6 @@ Database CRUD examples for different languages
 
 ## Groovy
 [Hibernate](https://github.com/vitaliy-art/databases/tree/main/Groovy/Hibernate)
+
+## Clojure
+[Toucan](https://github.com/vitaliy-art/databases/tree/main/Clojure/Toucan)
