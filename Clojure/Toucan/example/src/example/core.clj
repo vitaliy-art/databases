@@ -17,7 +17,6 @@
   [& args]
   (init-db)
   (print "\nClean up database... ")
-
   (storage/delete-departments! (storage/get-all-departments))
   (storage/delete-people! (storage/get-all-people))
   (storage/delete-employees! (storage/get-all-employees))
