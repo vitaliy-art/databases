@@ -42,3 +42,6 @@ Database CRUD examples for different languages
 
 ## Clojure
 [Toucan](https://github.com/vitaliy-art/databases/tree/main/Clojure/Toucan)
+
+## Dart
+[orm](https://github.com/vitaliy-art/databases/tree/main/Dart/orm)
