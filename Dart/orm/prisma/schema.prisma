@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "dart run orm"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../bd.db"
+}
+
+model Department {
+  id        Int        @id @default(autoincrement())
+  name      String
+  employees Employee[]
+
+  @@map("departments")
+}
+
+model Person {
+  id        String     @id @default(uuid())
+  name      String
+  address   String
+  birthDate DateTime   @map("birth_date")
+  employees Employee[]
+
+  @@map("people")
+}
+
+model Employee {
+  id           String     @id @default(uuid())
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  departmentId Int        @map("department_id")
+  person       Person     @relation(fields: [personId], references: [id], onDelete: Cascade)
+  personId     String     @map("person_id")
+  position     Int
+
+  @@map("employees")
+}
