@@ -45,3 +45,6 @@ Database CRUD examples for different languages
 
 ## Dart
 [orm](https://github.com/vitaliy-art/databases/tree/main/Dart/orm)
+
+## R
+[RSQLite](https://github.com/vitaliy-art/databases/tree/main/R/RSQLite)
