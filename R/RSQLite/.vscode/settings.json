@@ -1,0 +1,21 @@
+{
+    "r.debugger.timeouts.startup": 10000,
+    "cSpell.words": [
+        "alexcvzz",
+        "cachem",
+        "CRAN",
+        "cyclocomp",
+        "devcontainer",
+        "fastmap",
+        "nolint",
+        "pkgconfig",
+        "plogr",
+        "renv",
+        "riussi",
+        "rlang",
+        "RSPM",
+        "vctrs",
+        "Waka",
+        "wakatime"
+    ]
+}

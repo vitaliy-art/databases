@@ -153,3 +153,4 @@ Groovy/Hibernate/bd.db
 Clojure/Toucan/example/bd.db
 Dart/orm/bd.db
 Dart/bd.db
+R/RSQLite/bd.db
