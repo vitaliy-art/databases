@@ -4,21 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "VaporFluent",
+    name: "SQLite.swift_example",
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
-        .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.0.0"),
+        .package(url: "https://github.com/stephencelis/SQLite.swift.git", from: "0.14.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
-            name: "VaporFluent",
+            name: "SQLite.swift_example",
             dependencies: [
-                .product(name: "Fluent", package: "fluent"),
-                .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
-                .product(name: "Vapor", package: "vapor"),
+                .product(name: "SQLite", package: "SQLite.swift")
             ],
             path: "Sources"),
     ]
