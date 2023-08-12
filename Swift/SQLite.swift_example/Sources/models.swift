@@ -1,3 +1,5 @@
+import Foundation
+
 struct Department {
     var id = 0
     var name = ""
@@ -11,15 +13,20 @@ struct Person {
     var id = ""
     var name = ""
     var address = ""
-    var birthDate = ""
+    var birthDate = Date()
 
     public var description: String {
-        return "{ Person: { Id: \(id), name: \(name), Address: \(address), BirthDate: \(birthDate) } }"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let formattedDate = formatter.string(from: birthDate)
+        return "{ Person: { Id: \(id), name: \(name), Address: \(address), BirthDate: \(formattedDate) } }"
     }
 }
 
-enum Position {
-    case staffer, manager, boss
+enum Position: String {
+    case staffer = "Staffer"
+    case manager = "Manager"
+    case boss    = "Boss"
 }
 
 struct Employee {
@@ -29,6 +36,6 @@ struct Employee {
     var position: Position? = nil
 
     public var description: String {
-        return "{ Employee: { Id: \(id), Person: \(String(describing: person)), Department: \(String(describing: department)), Position: \(String(describing: position)) } }"
+        return "{ Employee: { Id: \(id), Person: \(person?.description ?? ""), Department: \(department?.description ?? ""), Position: \(position?.rawValue ?? "") } }"
     }
 }
