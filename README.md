@@ -48,3 +48,6 @@ Database CRUD examples for different languages
 
 ## R
 [RSQLite](https://github.com/vitaliy-art/databases/tree/main/R/RSQLite)
+
+## Swift
+[SQLite.swift](https://github.com/vitaliy-art/databases/tree/main/Swift/SQLite.swift_example)
