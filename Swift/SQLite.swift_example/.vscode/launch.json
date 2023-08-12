@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug SQLite.swift_example",
+            "program": "${workspaceFolder:SQLite.swift_example}/.build/debug/SQLite.swift_example",
+            "args": [],
+            "cwd": "${workspaceFolder:SQLite.swift_example}",
+            "preLaunchTask": "swift: Build Debug SQLite.swift_example"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release SQLite.swift_example",
+            "program": "${workspaceFolder:SQLite.swift_example}/.build/release/SQLite.swift_example",
+            "args": [],
+            "cwd": "${workspaceFolder:SQLite.swift_example}",
+            "preLaunchTask": "swift: Build Release SQLite.swift_example"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Test SQLite.swift_example",
+            "program": "/Applications/Xcode.app/Contents/Developer/usr/bin/xctest",
+            "args": [".build/debug/SQLite.swift_examplePackageTests.xctest"],
+            "cwd": "${workspaceFolder:SQLite.swift_example}",
+            "preLaunchTask": "swift: Build All"
+        }
+    ]
+}
