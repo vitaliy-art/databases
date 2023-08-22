@@ -51,3 +51,6 @@ Database CRUD examples for different languages
 
 ## Swift
 [SQLite.swift](https://github.com/vitaliy-art/databases/tree/main/Swift/SQLite.swift_example)
+
+## Rust
+[Diesel](https://github.com/vitaliy-art/databases/tree/main/Rust/Diesel)
