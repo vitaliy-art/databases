@@ -1,13 +1,13 @@
 use crate::models::department::*;
-use crate::models::person::*;
 use crate::models::employee::*;
-use diesel::SelectableHelper;
+use crate::models::person::*;
 use diesel::sqlite::SqliteConnection;
-use diesel::{Connection, RunQueryDsl, QueryDsl, ExpressionMethods};
+use diesel::SelectableHelper;
+use diesel::{Connection, ExpressionMethods, QueryDsl, RunQueryDsl};
 use uuid::Uuid;
 
 pub struct Storage {
-    pub filename: String
+    pub filename: String,
 }
 
 impl Storage {
@@ -17,10 +17,12 @@ impl Storage {
     }
 
     pub fn add_department(&self, department_name: &str) -> Department {
-        use crate::schema::departments::table;
         use crate::schema::departments::dsl::*;
+        use crate::schema::departments::table;
 
-        let dep = NewDepartment { name: department_name };
+        let dep = NewDepartment {
+            name: department_name,
+        };
 
         let conn = &mut self.get_connection();
         let _ = diesel::insert_into(table)
@@ -28,20 +30,34 @@ impl Storage {
             .execute(conn)
             .unwrap();
 
-        let dep_id = departments.select(id)
+        let dep_id = departments
+            .select(id)
             .order(id.desc())
             .first::<i32>(conn)
             .unwrap();
 
-        Department { id: dep_id, name: String::from(department_name) }
+        Department {
+            id: dep_id,
+            name: String::from(department_name),
+        }
     }
 
-    pub fn add_person (&self, person_name: String, person_address: String, person_birth_date: chrono::NaiveDate) -> Person {
+    pub fn add_person(
+        &self,
+        person_name: String,
+        person_address: String,
+        person_birth_date: chrono::NaiveDate,
+    ) -> Person {
         use crate::schema::people::table;
 
         let per_id = Uuid::new_v4().to_string();
         let date = format!("{}", person_birth_date.format("%Y-%m-%d"));
-        let per = NewPerson { id: &per_id, name: &person_name, address: &person_address, birth_date: &date };
+        let per = NewPerson {
+            id: &per_id,
+            name: &person_name,
+            address: &person_address,
+            birth_date: &date,
+        };
 
         let conn = &mut self.get_connection();
         let _ = diesel::insert_into(table)
@@ -49,14 +65,29 @@ impl Storage {
             .execute(conn)
             .unwrap();
 
-        Person { id: per_id, name: person_name, address: person_address, birth_date: date }
+        Person {
+            id: per_id,
+            name: person_name,
+            address: person_address,
+            birth_date: date,
+        }
     }
 
-    pub fn add_employee (&self, per: &Person, dep: &Department, employee_position: Position) -> Employee {
+    pub fn add_employee(
+        &self,
+        per: &Person,
+        dep: &Department,
+        employee_position: Position,
+    ) -> Employee {
         use crate::schema::employees::table;
 
         let emp_id = Uuid::new_v4().to_string();
-        let emp = NewEmployee { id: &emp_id, department_id: dep.id, person_id: &per.id, position: employee_position.to_i32() };
+        let emp = NewEmployee {
+            id: &emp_id,
+            department_id: dep.id,
+            person_id: &per.id,
+            position: employee_position.to_i32(),
+        };
 
         let conn = &mut self.get_connection();
         let _ = diesel::insert_into(table)
@@ -64,14 +95,20 @@ impl Storage {
             .execute(conn)
             .unwrap();
 
-        Employee { id: emp_id, department_id: dep.id, person_id: per.id.to_owned(), position: employee_position.to_i32() }
+        Employee {
+            id: emp_id,
+            department_id: dep.id,
+            person_id: per.id.to_owned(),
+            position: employee_position.to_i32(),
+        }
     }
 
     pub fn get_department_by_id(&self, department_id: i32) -> Department {
         use crate::schema::departments::dsl::*;
 
         let conn = &mut self.get_connection();
-        departments.filter(id.eq(department_id))
+        departments
+            .filter(id.eq(department_id))
             .select(Department::as_select())
             .first::<Department>(conn)
             .unwrap()
@@ -81,7 +118,8 @@ impl Storage {
         use crate::schema::people::dsl::*;
 
         let conn = &mut self.get_connection();
-        people.filter(id.eq(person_id))
+        people
+            .filter(id.eq(person_id))
             .select(Person::as_select())
             .first::<Person>(conn)
             .unwrap()
@@ -92,7 +130,8 @@ impl Storage {
         use crate::schema::employees::dsl::*;
 
         let conn = &mut self.get_connection();
-        employees.filter(id.eq(employee_id))
+        employees
+            .filter(id.eq(employee_id))
             .select(Employee::as_select())
             .first::<Employee>(conn)
             .unwrap()
@@ -102,7 +141,8 @@ impl Storage {
         use crate::schema::departments::dsl::*;
 
         let conn = &mut self.get_connection();
-        departments.select(Department::as_select())
+        departments
+            .select(Department::as_select())
             .load(conn)
             .unwrap()
     }
@@ -111,18 +151,14 @@ impl Storage {
         use crate::schema::people::dsl::*;
 
         let conn = &mut self.get_connection();
-        people.select(Person::as_select())
-            .load(conn)
-            .unwrap()
+        people.select(Person::as_select()).load(conn).unwrap()
     }
 
     pub fn get_all_employees(&self) -> Vec<Employee> {
         use crate::schema::employees::dsl::*;
 
         let conn = &mut self.get_connection();
-        employees.select(Employee::as_select())
-            .load(conn)
-            .unwrap()
+        employees.select(Employee::as_select()).load(conn).unwrap()
     }
 
     pub fn update_department(&self, dep: Department) {
@@ -169,7 +205,7 @@ impl Storage {
 
     pub fn delete_departments(&self, entities: Vec<Department>) {
         if entities.len() == 0 {
-            return
+            return;
         }
 
         use crate::schema::departments::dsl::*;
@@ -191,12 +227,13 @@ impl Storage {
                 .unwrap();
 
             Ok(())
-        }).unwrap();
+        })
+        .unwrap();
     }
 
     pub fn delete_people(&self, entities: Vec<Person>) {
         if entities.len() == 0 {
-            return
+            return;
         }
 
         use crate::schema::people::dsl::*;
@@ -217,12 +254,13 @@ impl Storage {
                 .unwrap();
 
             Ok(())
-        }).unwrap();
+        })
+        .unwrap();
     }
 
     pub fn delete_employees(&self, entities: Vec<Employee>) {
         if entities.len() == 0 {
-            return
+            return;
         }
 
         use crate::schema::employees::dsl::*;

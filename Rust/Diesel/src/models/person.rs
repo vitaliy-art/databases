@@ -1,5 +1,5 @@
-use core::fmt;
 use crate::schema::people;
+use core::fmt;
 use diesel::prelude::*;
 use diesel::sqlite::Sqlite;
 
@@ -15,7 +15,11 @@ pub struct Person {
 
 impl fmt::Display for Person {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{{ Person: {{ Id: {}, Name: {}, Address: {}, BirthDate: {} }} }}", self.id, self.name, self.address, self.birth_date)
+        write!(
+            f,
+            "{{ Person: {{ Id: {}, Name: {}, Address: {}, BirthDate: {} }} }}",
+            self.id, self.name, self.address, self.birth_date
+        )
     }
 }
 

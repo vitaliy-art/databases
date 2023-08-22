@@ -1,25 +1,27 @@
-use storage::Storage;
 use chrono::NaiveDate;
 use dotenvy::dotenv;
 use std::env;
+use storage::Storage;
 
 pub mod models {
     pub mod department;
-    pub mod person;
     pub mod employee;
+    pub mod person;
 }
 
 pub mod schema;
 mod storage;
 
-use models::employee::Position;
 use crate::models::department::Department;
 use crate::models::person::Person;
+use models::employee::Position;
 
 fn main() {
     dotenv().ok();
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
-    let stor = Storage { filename: database_url };
+    let stor = Storage {
+        filename: database_url,
+    };
 
     print!("Clean up database... ");
     let departments = stor.get_all_departments();
@@ -45,8 +47,16 @@ fn main() {
 
     println!();
     print!("Add people... ");
-    let per1 = &mut stor.add_person("Ivan".to_string(), "Moscow".to_string(), NaiveDate::from_ymd_opt(1990, 10, 02).unwrap());
-    let per2 = stor.add_person("John".to_string(), "London".to_string(), NaiveDate::from_ymd_opt(1998, 01, 14).unwrap());
+    let per1 = &mut stor.add_person(
+        "Ivan".to_string(),
+        "Moscow".to_string(),
+        NaiveDate::from_ymd_opt(1990, 10, 02).unwrap(),
+    );
+    let per2 = stor.add_person(
+        "John".to_string(),
+        "London".to_string(),
+        NaiveDate::from_ymd_opt(1998, 01, 14).unwrap(),
+    );
     println!("done");
 
     println!();
@@ -61,12 +71,20 @@ fn main() {
     stor.add_employee(&per1, &dep1, Position::Staffer);
     stor.add_employee(&per2, &dep1, Position::Staffer);
     stor.add_employee(
-        &stor.add_person("Nick".to_string(), "Berlin".to_string(), NaiveDate::from_ymd_opt(1995, 02, 23).unwrap()),
+        &stor.add_person(
+            "Nick".to_string(),
+            "Berlin".to_string(),
+            NaiveDate::from_ymd_opt(1995, 02, 23).unwrap(),
+        ),
         &dep2,
         Position::Manager,
     );
     stor.add_employee(
-        &stor.add_person("Stan".to_string(), "Oslo".to_string(), NaiveDate::from_ymd_opt(1988, 04, 21).unwrap()),
+        &stor.add_person(
+            "Stan".to_string(),
+            "Oslo".to_string(),
+            NaiveDate::from_ymd_opt(1988, 04, 21).unwrap(),
+        ),
         &dep2,
         Position::Boss,
     );
@@ -78,7 +96,13 @@ fn main() {
     for emp in employees {
         let department_id = &emp.department_id;
         let person_id = &emp.person_id;
-        println!("{}", emp.to_string(stor.get_department_by_id(department_id.to_owned()), stor.get_person_by_id(person_id.to_owned())));
+        println!(
+            "{}",
+            emp.to_string(
+                stor.get_department_by_id(department_id.to_owned()),
+                stor.get_person_by_id(person_id.to_owned())
+            )
+        );
     }
 
     println!();
@@ -89,13 +113,21 @@ fn main() {
     println!();
     print!("Update Department Two... ");
     dep2.name = "Department".to_string();
-    stor.update_department(Department { id: dep2.id, name: dep2.name.to_string() });
+    stor.update_department(Department {
+        id: dep2.id,
+        name: dep2.name.to_string(),
+    });
     println!("done");
 
     println!();
     print!("Update Ivan... ");
     per1.address = "Tula".to_string();
-    stor.update_person(Person { id: per1.id.to_string(), name: per1.name.to_string(), address: per1.address.to_string(), birth_date: per1.birth_date.to_string() });
+    stor.update_person(Person {
+        id: per1.id.to_string(),
+        name: per1.name.to_string(),
+        address: per1.address.to_string(),
+        birth_date: per1.birth_date.to_string(),
+    });
     println!("done");
 
     println!();
@@ -118,12 +150,21 @@ fn main() {
     for emp in employees {
         let department_id = &emp.department_id;
         let person_id = &emp.person_id;
-        println!("{}", emp.to_string(stor.get_department_by_id(department_id.to_owned()), stor.get_person_by_id(person_id.to_owned())));
+        println!(
+            "{}",
+            emp.to_string(
+                stor.get_department_by_id(department_id.to_owned()),
+                stor.get_person_by_id(person_id.to_owned())
+            )
+        );
     }
 
     println!();
     print!("Delete Department Two... ");
-    stor.delete_departments(vec![Department { id: dep2.id, name: dep2.name.to_string() }]);
+    stor.delete_departments(vec![Department {
+        id: dep2.id,
+        name: dep2.name.to_string(),
+    }]);
     println!("done");
 
     println!();

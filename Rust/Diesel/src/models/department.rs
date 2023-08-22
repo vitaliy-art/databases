@@ -1,5 +1,5 @@
-use core::fmt;
 use crate::schema::departments;
+use core::fmt;
 use diesel::prelude::*;
 use diesel::sqlite::Sqlite;
 
@@ -13,7 +13,11 @@ pub struct Department {
 
 impl fmt::Display for Department {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{{ Department: {{ Id: {}, Name: {} }} }}", self.id, self.name)
+        write!(
+            f,
+            "{{ Department: {{ Id: {}, Name: {} }} }}",
+            self.id, self.name
+        )
     }
 }
 

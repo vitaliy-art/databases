@@ -28,8 +28,4 @@ diesel::table! {
 diesel::joinable!(employees -> departments (department_id));
 diesel::joinable!(employees -> people (person_id));
 
-diesel::allow_tables_to_appear_in_same_query!(
-    departments,
-    employees,
-    people,
-);
+diesel::allow_tables_to_appear_in_same_query!(departments, employees, people,);
