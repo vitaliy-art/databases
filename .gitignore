@@ -155,3 +155,4 @@ Dart/orm/bd.db
 Dart/bd.db
 R/RSQLite/bd.db
 Swift/SQLite.swift_example/db.bd
+Rust/Diesel/db.bd
