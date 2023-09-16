@@ -54,3 +54,6 @@ Database CRUD examples for different languages
 
 ## Rust
 [Diesel](https://github.com/vitaliy-art/databases/tree/main/Rust/Diesel)
+
+## Ruby
+[ActiveRecord](https://github.com/vitaliy-art/databases/tree/main/Ruby/ActiveRecord)
