@@ -156,3 +156,4 @@ Dart/bd.db
 R/RSQLite/bd.db
 Swift/SQLite.swift_example/db.bd
 Rust/Diesel/db.bd
+Ruby/ActiveRecord/bd.db
