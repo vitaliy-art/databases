@@ -1,6 +1,10 @@
 # databases
 Database CRUD examples for different languages
 
+## How to run
+
+Open the desired project as root folder in VSCode, then open [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and type `Reopen in Container`. Press Enter and after executing scripts press F5 (Run and Debug).
+
 ## C#
 [EntityFramework](https://github.com/vitaliy-art/databases/tree/main/C%23/EntityFramework)
 
