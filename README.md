@@ -3,6 +3,7 @@ Database CRUD examples for different languages
 
 ## C#
 [EntityFramework](https://github.com/vitaliy-art/databases/tree/main/C%23/EntityFramework)
+[LINQtoDB](https://github.com/vitaliy-art/databases/tree/main/C%23/LINQtoDB)
 
 ## Go
 [GORM](https://github.com/vitaliy-art/databases/tree/main/Go/GORM)
