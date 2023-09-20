@@ -32,7 +32,7 @@ func NewSqliteFactory(filename string) (f *SqliteFactory, err error) {
 
 	db.Exec(sql)
 
-	err = db.Debug().AutoMigrate(migrationModels...)
+	err = db.AutoMigrate(migrationModels...)
 	if err != nil {
 		return
 	}
