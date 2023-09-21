@@ -158,3 +158,4 @@ Swift/SQLite.swift_example/db.bd
 Rust/Diesel/db.bd
 Ruby/ActiveRecord/bd.db
 C#/LINQtoDB/db.bd
+Go/Beego/bd.db
