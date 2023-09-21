@@ -13,6 +13,8 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 ## Go
 [GORM](https://github.com/vitaliy-art/databases/tree/main/Go/GORM)
 
+[Beego](https://github.com/vitaliy-art/databases/tree/main/Go/Beego)
+
 ## Python
 [SQLAlchemy](https://github.com/vitaliy-art/databases/tree/main/Python/SQLAlchemy)
 
