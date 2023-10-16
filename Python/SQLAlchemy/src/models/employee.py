@@ -30,7 +30,7 @@ class Employee(Base):
         String,
         ForeignKey(f'{Person.__tablename__}.id')
     )
-    person = relationship(Person.__name__)
+    person = relationship(Person.__name__, overlaps='_employees')
 
     position = Column(Enum(Position))
 
