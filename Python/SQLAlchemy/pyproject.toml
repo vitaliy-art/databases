@@ -6,8 +6,8 @@ authors = ["Vitaliy Artemov <olivera507224@yandex.ru>"]
 license = "The Unlicense"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-SQLAlchemy = "^1.4.39"
+python = "^3.11"
+SQLAlchemy = "^2.0.22"
 
 [tool.poetry.dev-dependencies]
 
