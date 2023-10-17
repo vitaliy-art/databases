@@ -18,6 +18,8 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 ## Python
 [SQLAlchemy](https://github.com/vitaliy-art/databases/tree/main/Python/SQLAlchemy)
 
+[Peewee](https://github.com/vitaliy-art/databases/tree/main/Python/Peewee)
+
 ## PHP
 [Doctrine](https://github.com/vitaliy-art/databases/tree/main/PHP/Doctrine)
 
