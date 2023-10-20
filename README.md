@@ -23,6 +23,8 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 ## PHP
 [Doctrine](https://github.com/vitaliy-art/databases/tree/main/PHP/Doctrine)
 
+[CycleORM](https://github.com/vitaliy-art/databases/tree/main/PHP/CycleORM)
+
 ## TypeScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/TypeScript/TypeORM)
 
