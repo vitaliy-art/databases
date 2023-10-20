@@ -1,0 +1,24 @@
+{
+    "name": "vartemov/cycle-orm-sample",
+    "type": "project",
+    "require": {
+        "cycle/orm": "^2.4",
+        "cycle/annotated": "^3.3",
+        "ramsey/uuid": "^4.7"
+    },
+    "license": "The Unlicense",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vitaliy Artemov",
+            "email": "olivera507224@yandex.ru"
+        }
+    ],
+    "require-dev": {
+        "vimeo/psalm": "^5.15"
+    }
+}
