@@ -1,0 +1,21 @@
+{
+  "name": "sample",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/uuid": "^9.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "bun-types": "latest",
+    "eslint": "^8.52.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^5.8.10",
+    "@mikro-orm/sqlite": "^5.8.10",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.1"
+  }
+}
