@@ -13,8 +13,8 @@
   "license": "Unlicense",
   "dependencies": {
     "reflect-metadata": "^0.1.13",
-    "sqlite3": "^5.0.10",
-    "typeorm": "^0.3.7"
+    "sqlite3": "^5.1.6",
+    "typeorm": "^0.3.17"
   },
   "type": "module"
 }

@@ -14,7 +14,8 @@
             "program": "${workspaceFolder}/src/index.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
-            ]
+            ],
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }
