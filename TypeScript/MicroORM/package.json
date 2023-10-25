@@ -13,7 +13,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@mikro-orm/core": "^5.8.10",
+    "@mikro-orm/core": "^5.9.0",
     "@mikro-orm/sqlite": "^5.8.10",
     "sqlite3": "^5.1.6",
     "uuid": "^9.0.1"
