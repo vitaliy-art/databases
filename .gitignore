@@ -161,5 +161,6 @@ C#/LINQtoDB/db.bd
 Go/Beego/bd.db
 Python/Peewee/db.bd
 PHP/CycleORM/db.bd
+TypeScript/MicroORM/db.bd
 TypeScript/Sequelize/db.bd
 JavaScript/Sequelize/db.bd

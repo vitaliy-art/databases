@@ -20,7 +20,8 @@
 				"riussi.code-stats-vscode",
 				"EditorConfig.EditorConfig",
 				"dbaeumer.vscode-eslint",
-				"bierner.jsdoc-markdown-highlighting"
+				"bierner.jsdoc-markdown-highlighting",
+				"WakaTime.vscode-wakatime"
 			]
 		}
 	}
