@@ -30,6 +30,8 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 
 [Sequelize](https://github.com/vitaliy-art/databases/tree/main/TypeScript/Sequelize)
 
+[MikroORM](https://github.com/vitaliy-art/databases/tree/main/TypeScript/MicroORM)
+
 ## JavaScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/JavaScript/TypeORM)
 
