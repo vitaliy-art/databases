@@ -28,8 +28,12 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 ## TypeScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/TypeScript/TypeORM)
 
+[Sequelize](https://github.com/vitaliy-art/databases/tree/main/TypeScript/Sequelize)
+
 ## JavaScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/JavaScript/TypeORM)
+
+[Sequelize](https://github.com/vitaliy-art/databases/tree/main/JavaScript/Sequelize)
 
 ## CoffeeScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/CoffeeScript/TypeORM)

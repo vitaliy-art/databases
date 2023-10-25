@@ -7,14 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Run and Debug",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/index.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ],
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]
