@@ -42,6 +42,8 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 ## CoffeeScript
 [TypeORM](https://github.com/vitaliy-art/databases/tree/main/CoffeeScript/TypeORM)
 
+[MikroORM](https://github.com/vitaliy-art/databases/tree/main/CoffeeScript/MikroORM)
+
 ## F#
 [EntityFramework](https://github.com/vitaliy-art/databases/tree/main/F%23/EntityFramework)
 
