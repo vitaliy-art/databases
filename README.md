@@ -45,7 +45,7 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 [MikroORM](https://github.com/vitaliy-art/databases/tree/main/CoffeeScript/MikroORM)
 
 ## F#
-[EntityFramework](https://github.com/vitaliy-art/databases/tree/main/F%23/EntityFramework)
+[EntityFramework](https://github.com/vitaliy-art/databases/tree/main/FSharp/EntityFramework)
 
 ## Lua
 [4DaysORM](https://github.com/vitaliy-art/databases/tree/main/Lua/4DaysORM)
