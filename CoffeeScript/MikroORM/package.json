@@ -13,9 +13,9 @@
     "coffeescript": "^2.7.0"
   },
   "dependencies": {
-    "@mikro-orm/core": "^5.9.0",
-    "@mikro-orm/sqlite": "^5.9.0",
-    "sqlite3": "^5.1.6",
+    "@mikro-orm/core": "^5.9.8",
+    "@mikro-orm/sqlite": "^5.9.8",
+    "sqlite3": "^5.1.7",
     "uuid": "^9.0.1"
   },
   "type": "module"
