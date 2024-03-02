@@ -6,9 +6,9 @@ Database CRUD examples for different languages
 Open the desired project as root folder in VSCode, then open [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and type `Reopen in Container`. Press Enter and after executing scripts press F5 (Run and Debug).
 
 ## C#
-[EntityFramework](https://github.com/vitaliy-art/databases/tree/main/C%23/EntityFramework)
+[EntityFramework](https://github.com/vitaliy-art/databases/tree/main/CSharp/EntityFramework)
 
-[LINQtoDB](https://github.com/vitaliy-art/databases/tree/main/C%23/LINQtoDB)
+[LINQtoDB](https://github.com/vitaliy-art/databases/tree/main/CSharp/LINQtoDB)
 
 ## Go
 [GORM](https://github.com/vitaliy-art/databases/tree/main/Go/GORM)
