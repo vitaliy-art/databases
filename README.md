@@ -47,6 +47,8 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 ## F#
 [EntityFramework](https://github.com/vitaliy-art/databases/tree/main/FSharp/EntityFramework)
 
+[LINQtoDB](https://github.com/vitaliy-art/databases/tree/main/FSharp/LINQtoDB)
+
 ## Lua
 [4DaysORM](https://github.com/vitaliy-art/databases/tree/main/Lua/4DaysORM)
 
