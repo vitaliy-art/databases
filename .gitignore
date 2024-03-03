@@ -137,14 +137,14 @@ fabric.properties
 
 .fake
 
-C#/EntityFramework/db.bd
+CSharp/EntityFramework/db.bd
 Go/GORM/bd.db
 Python/SQLAlchemy/bd.db
 PHP/Doctrine/bd.db
 TypeScript/TypeORM/db.bd
 JavaScript/TypeORM/db.bd
 CoffeeScript/TypeORM/bd.db
-F#/EntityFramework/db.bd
+FSharp/EntityFramework/db.bd
 Lua/4DaysORM/bd.db
 Java/Hybernate/bd.db
 Groovy/Hibernate/src/main/groovy/bd.db
@@ -157,7 +157,7 @@ R/RSQLite/bd.db
 Swift/SQLite.swift_example/db.bd
 Rust/Diesel/db.bd
 Ruby/ActiveRecord/bd.db
-C#/LINQtoDB/db.bd
+CSharp/LINQtoDB/db.bd
 Go/Beego/bd.db
 Python/Peewee/db.bd
 PHP/CycleORM/db.bd
@@ -166,3 +166,4 @@ TypeScript/Sequelize/db.bd
 JavaScript/Sequelize/db.bd
 JavaScript/MikroORM/db.bd
 CoffeeScript/MikroORM/db.bd
+FSharp/LINQtoDB/db.bd
