@@ -11,7 +11,7 @@ using std::vector;
 auto make_storage(string file_name = "bd.db") {
     auto storage = make_storage(file_name,
         make_table("departments",
-            make_column("id", &Department::id, autoincrement(), primary_key()),
+            make_column("id", &Department::id, primary_key().autoincrement()),
             make_column("name", &Department::name, unique())
         ),
 
