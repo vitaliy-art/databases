@@ -1,6 +1,6 @@
-FROM mcr.microsoft.com/devcontainers/cpp:0-debian-11
+FROM mcr.microsoft.com/devcontainers/cpp:1.0.9-debian-12
 
-ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="3.22.2"
+ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="3.28.4"
 
 # Optionally install the cmake for vcpkg
 COPY ./reinstall-cmake.sh /tmp/
@@ -20,3 +20,4 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
 RUN vcpkg install fmt
 RUN vcpkg install sqlite-orm
 RUN vcpkg install boost-uuid
+RUN vcpkg install boost-lexical-cast
