@@ -167,3 +167,5 @@ JavaScript/Sequelize/db.bd
 JavaScript/MikroORM/db.bd
 CoffeeScript/MikroORM/db.bd
 FSharp/LINQtoDB/db.bd
+Elixir/ecto/db.sqlite
+Elixir/ecto/example
