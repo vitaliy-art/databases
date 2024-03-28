@@ -6,10 +6,10 @@ defmodule Models.Employee do
   @primary_key {:id, Ecto.UUID, autogenerate: true}
 
   schema "employees" do
-    belongs_to :department, Department
+    belongs_to(:department, Department)
     @foreign_key_type Ecto.UUID
-    belongs_to :person, Person
-    field :position, Ecto.Enum, values: [:Staffer, :Manager, :Boss]
+    belongs_to(:person, Person)
+    field(:position, Ecto.Enum, values: [:Staffer, :Manager, :Boss])
   end
 
   def changeset(employee, params \\ %{}) do

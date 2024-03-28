@@ -2,7 +2,7 @@ defmodule Models.Department do
   use Ecto.Schema
 
   schema "departments" do
-    field :name, :string
+    field(:name, :string)
   end
 
   def changeset(department, params \\ %{}) do
