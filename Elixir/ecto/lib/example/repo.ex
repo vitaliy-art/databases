@@ -3,11 +3,12 @@ defmodule Example.Repo do
   alias Models.Employee
   alias Models.Person
   alias Models.Department
+
   use Ecto.Repo,
     otp_app: :example,
     adapter: Ecto.Adapters.SQLite3
 
-  @spec add_department!(String.t) :: Department
+  @spec add_department!(String.t()) :: Department
   def add_department!(name) do
     %Department{}
     |> Department.changeset(%{name: name})
@@ -28,7 +29,8 @@ defmodule Example.Repo do
     |> insert!()
   end
 
-  @spec add_employee!(Department, String.t, String.t, Date, :Staffer | :Manager | :Boss) :: Employee
+  @spec add_employee!(Department, String.t(), String.t(), Date, :Staffer | :Manager | :Boss) ::
+          Employee
   def add_employee!(department, name, address, birth_date, position) do
     per = add_person!(name, address, birth_date)
     add_employee!(department, per, position)
@@ -41,7 +43,7 @@ defmodule Example.Repo do
   def get_all_people(), do: Person |> all()
 
   def get_all_employees() do
-    query = from e in Employee, preload: [:department, :person]
+    query = from(e in Employee, preload: [:department, :person])
     all(query)
   end
 
@@ -67,6 +69,6 @@ defmodule Example.Repo do
   end
 
   def delete_many!(models) when is_list(models) do
-    Enum.each(models, &delete&1)
+    Enum.each(models, &delete(&1))
   end
 end

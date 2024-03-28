@@ -4,9 +4,9 @@ defmodule Models.Person do
   @primary_key {:id, Ecto.UUID, autogenerate: true}
 
   schema "people" do
-    field :name, :string
-    field :birth_date, :date
-    field :address, :string
+    field(:name, :string)
+    field(:birth_date, :date)
+    field(:address, :string)
   end
 
   def changeset(person, params \\ %{}) do

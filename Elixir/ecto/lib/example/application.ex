@@ -12,7 +12,7 @@ defmodule Example.Application do
     children = [
       # Starts a worker by calling: Example.Worker.start_link(arg)
       # {Example.Worker, arg},
-      Example.Repo,
+      Example.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -40,7 +40,7 @@ defmodule Example.Application do
     IO.puts("")
 
     IO.puts("Added departments:")
-    Enum.each(Repo.get_all_departments(), &IO.puts&1)
+    Enum.each(Repo.get_all_departments(), &IO.puts(&1))
     IO.puts("")
 
     IO.write("Add people... ")
@@ -50,7 +50,7 @@ defmodule Example.Application do
     IO.puts("")
 
     IO.puts("Added people:")
-    Enum.each(Repo.get_all_people(), &IO.puts&1)
+    Enum.each(Repo.get_all_people(), &IO.puts(&1))
     IO.puts("")
 
     IO.write("Add employees... ")
@@ -62,7 +62,7 @@ defmodule Example.Application do
     IO.puts("")
 
     IO.puts("Added employees:")
-    Enum.each(Repo.get_all_employees(), &IO.puts&1)
+    Enum.each(Repo.get_all_employees(), &IO.puts(&1))
     IO.puts("")
 
     IO.write("Delete Department One... ")
@@ -81,15 +81,15 @@ defmodule Example.Application do
     IO.puts("")
 
     IO.puts("Remain departments:")
-    Enum.each(Repo.get_all_departments(), &IO.puts&1)
+    Enum.each(Repo.get_all_departments(), &IO.puts(&1))
     IO.puts("")
 
     IO.puts("Remain people:")
-    Enum.each(Repo.get_all_people(), &IO.puts&1)
+    Enum.each(Repo.get_all_people(), &IO.puts(&1))
     IO.puts("")
 
     IO.puts("Remain employees:")
-    Enum.each(Repo.get_all_employees(), &IO.puts&1)
+    Enum.each(Repo.get_all_employees(), &IO.puts(&1))
     IO.puts("")
 
     IO.write("Delete Department Two... ")
@@ -102,7 +102,7 @@ defmodule Example.Application do
     IO.puts("")
 
     IO.puts("Remain people:")
-    Enum.each(Repo.get_all_people(), &IO.puts&1)
+    Enum.each(Repo.get_all_people(), &IO.puts(&1))
     IO.puts("")
 
     IO.write("Remain employees count: ")
