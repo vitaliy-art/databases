@@ -84,3 +84,6 @@ Open the desired project as root folder in VSCode, then open [Command Palette](h
 
 ## Elixir
 [ecto](https://github.com/vitaliy-art/databases/tree/main/Elixir/ecto)
+
+## Scala
+[Slick](https://github.com/vitaliy-art/databases/tree/main/Scala/Slick)
