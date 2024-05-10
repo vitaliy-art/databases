@@ -169,3 +169,4 @@ CoffeeScript/MikroORM/db.bd
 FSharp/LINQtoDB/db.bd
 Elixir/ecto/db.sqlite
 Elixir/ecto/example
+Scala/Slick/database.sqlite
